@@ -39,7 +39,7 @@ public class PlaywrightRunner {
 
     @BeforeEach
     public void setUp() {
-        browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setHeadless(false));
+        browser = playwright.firefox().launch(new BrowserType.LaunchOptions().setHeadless(false));
         browserContext = browser.newContext(new Browser.NewContextOptions()
                 .setPermissions(Arrays.asList("geolocation"))
                 .setRecordVideoDir(Paths.get("videos/"))
